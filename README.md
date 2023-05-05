@@ -1,6 +1,6 @@
 Projekt ne UEB2-Grupi 30
 
-Contributors:
+Contributors:<br/>
 1.Ilirjana Suka<br/>
 2.Krenare Kryeziu<br/>
 3.Leonitë Gllareva<br/>
