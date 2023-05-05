@@ -61,7 +61,7 @@ $pass=$_POST['pass'];
 </div>
 <button>Log in</button>
 <div class="register">
-    <p>Don't have a account <a href="#">Register</a>
+    <p>Don't have a account <a href="signup.php">Register</a>
 </div>
 </form>
 </div>
