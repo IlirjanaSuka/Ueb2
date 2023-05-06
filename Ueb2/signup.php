@@ -23,49 +23,70 @@
     </head>
     <body>
     <form method="POST" action="" id="registration-form">
-    <div class="form-section" id="section-role">
-  <label for="role" class="roli">Roli</label>
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="role-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Zgjidhni rolin
-    </button>
-    <div class="dropdown-menu" aria-labelledby="role-button">
-      <a class="dropdown-item" href="#" data-value="student">Student</a>
-      <a class="dropdown-item" href="#" data-value="profesor">Profesor/Asistent</a>
-    </div>
-  </div>
-  <br>
-  <button type="button" class="next-section-button">Next</button>
+    <section class="register-section">
+  <h2>SignUp</h2>
+  <form action="signup.php" method="post">
+    <label for="first-name">First Name:</label>
+    <input type="text" id="first-name" name="first_name" required>
+    <br>
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" name="last_name" required>
+    <br>
+    <label for="role">Role:</label>
+<select id="role" name="role" required>
+  <option value="">Select Role</option>
+  <option value="Student">Student</option>
+  <option value="Professor/Assistant">Professor/Assistant</option>
+</select>
+<div id="student-id-field" style="display: none;">
+  <label for="student-id">Student ID:</label>
+  <input type="text" id="student-id" name="student_id">
 </div>
-
-  <div class="form-section" id="section-name">
-    <label for="name">Emri:</label>
-    <input type="text" name="name" id="name" required>
-    <br>
-
-    <label for="surname">Mbiemri:</label>
-    <input type="text" name="surname" id="surname" required>
-    <br>
-    <button type="button" class="previous-section-button">Kthehu</button>
-    <button type="button" class="next-section-button">Next</button>
-  </div>
-  <div class="form-section" id="section-username-password">
+<div id="professor-id-field" style="display: none;">
+  <label for="professor-id">Professor ID:</label>
+  <input type="text" id="professor-id" name="professor_id">
+</div>
+    
     <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
-    <br>
-    <label for="email">E-mail:</label>
-    <input type="email" name="email" id="email" required>
+    <input type="text" id="username" name="username" required>
     <br>
     <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
+    <input type="password" id="password" name="password" required>
     <br>
-
-    <button type="button" class="previous-section-button">Kthehu</button>
-    <button type="submit">Regjistrohu</button>
-  </div>
-</form>
+    <label for="confirm-password">Confirm <br>Password:</label>
+    <input type="password" id="confirm-password" name="confirm_password" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="confirm-email">Confirm Email:</label>
+    <input type="email" id="confirm-email" name="confirm_email" required>
+    <br>
+    <button type="submit">SignUp</button>
+  </form>
+</section>
+    </form>
         <script src="signup.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="script.js"></script>
     </body>
+  <?php
+  include 'footer.php';
+  ?>
+    <script>
+$(document).ready(function() {
+  $("#role").change(function() {
+    if ($(this).val() === "Student") {
+      $("#student-id-field").show();
+      $("#professor-id-field").hide();
+    } else if ($(this).val() === "Professor/Assistant") {
+      $("#student-id-field").hide();
+      $("#professor-id-field").show();
+    } else {
+      $("#student-id-field").hide();
+      $("#professor-id-field").hide();
+    }
+  });
+});
+</script>
 </html>
