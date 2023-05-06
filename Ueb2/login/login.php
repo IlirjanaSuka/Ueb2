@@ -1,5 +1,5 @@
 <?php
-$error=;
+$error="";
 $success="";
 if($_SERVER['REQUEST_METHOD']=='POST'){
 $mail=$_POST['mail'];
