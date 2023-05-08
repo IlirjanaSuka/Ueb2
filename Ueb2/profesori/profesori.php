@@ -10,23 +10,30 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   </head>
-  <body >
+  <body class="body2">
     <section class="main">
-      <nav style="background-color:  #124e5ea3;">
-        <a href="#" class="logo" >
+      <nav style="background-color:  #124e5ea3;" class="nav3">
+        <a href="#" class="logo" class="a2" >
           <h1>FindYourWay</h1>
         </a>
-        <ul class="menu">
-          <li><a href="home1.php" class="active">Home</a></li>
-          <li><a href="#">Drejtimet</a></li>
-          <li><a href="signup.php">LogIn</a></li>
-          <li><a href="signup.php">SignUp</a></li>
-          <li><a href="#">Rreth nesh</a></li>
+        <ul class="menu" class="ul2">
+          <li><a href="home1.php" class="active" class="a2">Home</a></li>
+          <li><a class="a2" href="#">Drejtimet</a></li>
+          <li><a class="a2" href="signup.php" >LogIn</a></li>
+          <li><a class="a2" href="signup.php">SignUp</a></li>
+          <li><a class="a2" href="#">Rreth nesh</a></li>
         </ul>
       </nav>
       
       <div class="button-container">
-        <button >Klasat</button>
+      <button class="dropdown">
+  Klasat
+  <select>
+    <option value="Matematike">Matematike</option>
+    <option value="Fizike">Ueb 1</option>
+    <option value="Kimi">Ueb 2</option>
+  </select>
+</button>
         <button >Burimet/Resources</button>
         <button >Studentet</button>
       </div>
@@ -80,4 +87,6 @@
     </footer>
     
   </body>
-</
+
+
+</html>
