@@ -22,10 +22,10 @@
       </nav>
         
     <form method="post" class="student-form">
-  <label for="student_id">Student ID:</label>
+  <label for="student_id">ID e studentit:</label>
   <input type="number" name="student_id" id="student_id">
   <br>
-  <input type="submit" name="delete_student" value="Delete Student">
+  <input type="submit" name="delete_student" value="Fshij studentin">
 </form>
 <?php
 
@@ -41,9 +41,9 @@ if (isset($_POST['delete_student'])) {
     
     $sql = "DELETE FROM students WHERE id = '$student_id'";
     if (mysqli_query($conn, $sql)) {
-        echo "Student deleted successfully.";
+        echo "Studenti u fshi me sukses.";
     } else {
-        echo "Error deleting student: " . mysqli_error($conn);
+        echo "Gabim gjate fshirjes se studentit: " . mysqli_error($conn);
     }
     
     mysqli_close($conn);
