@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     
     if (empty($name) || empty($email)) {
-        echo "Please fill in both name and email fields.";
+        echo "Ju lutem plotesojini te dyja; emrin dhe email-in.";
     } else {
        
         $db_host = 'localhost';
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        
         $sql = "INSERT INTO students (name, email) VALUES ('$name', '$email')";
         if (mysqli_query($conn, $sql)) {
-            echo "Student added successfully.";
+            echo "Studenti u shtua..";
         } else {
             echo "Error adding student: " . mysqli_error($conn);
         }
