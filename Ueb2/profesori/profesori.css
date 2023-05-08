@@ -308,5 +308,10 @@ button {
   .dropdown option:hover {
     background-color: #e8275d;
   }
+
+  .select1{
+    background-color: #124e5e ;
+    color: white;
+  }
   
   
