@@ -2,10 +2,10 @@
 $error="";
 $success="";
 if($_SERVER['REQUEST_METHOD']=='POST'){
-$mail=$_POST['mail'];
+$uname=$_POST['uname'];
 $pass=$_POST['pass'];
 
-    if($mail=='student'){
+    if($uname=='student'){
       $hash=password_hash('password',PASSWORD_DEFAULT);
       if(password_verify($pass,$hash)){
             $success="Welcome Student!";
@@ -25,14 +25,44 @@ $pass=$_POST['pass'];
 
 ?>
 
-
 <!DOCTYPE html>
 <html lange="en">
     <head>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="menu.css">
         <title>Login</title>
 </head>
 <body>
+<nav>
+    <a href="#" class="logo">
+    <h1>FindYourWay</h1>
+  </a>
+    <?php
+    // Define the menu items
+    $menuItems = array(
+        array('Home', '#'),
+        array('About', '#'),
+        array('Courses', '#'),
+        array('Teachers', '#'),
+        array('Reviews', '#'),
+        array('Contact', '#')
+
+
+    );
+    ?>
+
+    <ul>
+        <?php
+        // Generate the menu items
+        foreach ($menuItems as $item) {
+            $label = $item[0];
+            $url = $item[1];
+            echo '<li><a href="' . $url . '">' . $label . '</a></li>';
+        }
+        ?>
+    </ul>
+    </nav>
+
     <form method="POST" action="">
     <section>
         <div class="form-box">
@@ -46,9 +76,9 @@ $pass=$_POST['pass'];
                         <p class="success-message"><?php echo $success; ?></p>
                     <?php endif; ?>
                 <div class="inputbox">
-                <ion-icon name="mail-outline"></ion-icon>
-                    <input type="email" name="mail" required>
-                    <label for="">Email</label>
+                <ion-icon name="person-outline"></ion-icon>
+                    <input type="uname" name="uname" required>
+                    <label for="">Username</label>
                 </div>
                     <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
@@ -61,7 +91,7 @@ $pass=$_POST['pass'];
 </div>
 <button>Log in</button>
 <div class="register">
-    <p>Don't have a account <a href="signup.php">Register</a>
+    <p>Don't have a account? <a href="signup.php">Register</a>
 </div>
 </form>
 </div>
