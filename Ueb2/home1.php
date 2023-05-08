@@ -21,6 +21,7 @@
                     <li><a href="#">Drejtimet</a></li>
                     <li><a href="#">LogIn</a></li>
                     <li><a href="#">SignUp</a></li>
+                    <li><a href="#">Rreth nesh</a></li>
                 </ul>
             </nav>
             <div class="main-heading">
