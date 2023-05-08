@@ -23,13 +23,13 @@
         
     
     <form method="post" class="student-form">
-  <label for="name">Name:</label>
+  <label for="name">Emri:</label>
   <input type="text" name="name" id="name">
   <br>
-  <label for="email">Email:</label>
+  <label for="email">Email-i:</label>
   <input type="email" name="email" id="email">
   <br>
-  <input type="submit" value="Add Student">
+  <input type="submit" value="Shto studentin">
 </form>
 
 <?php
