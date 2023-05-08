@@ -1,0 +1,43 @@
+body{
+    /* background-image: url("img7.jpg"); */
+    background-image: url('att.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.student-form {
+border: 1px solid #121111;
+padding: 20px;
+width: 100%;
+max-width: 500px;
+margin: 0 auto;
+background-image: url("img5.webp");
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #e8275d;
+}
+
+input[type="text"],
+input[type="email"] {
+padding: 10px;
+width: 100%;
+box-sizing: border-box;
+border-radius: 5px;
+border: 1px solid #181515;
+margin-bottom: 20px;
+}
+
+input[type="submit"] {
+background-color: #f481a1;
+color: white;
+padding: 10px 20px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color:#e8275d;
+}
