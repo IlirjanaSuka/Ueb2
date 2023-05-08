@@ -1,0 +1,40 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: url('space.png')no-repeat;
+    border-bottom:2px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+}
+
+nav a.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(51, 51, 90);
+    margin-left: 5%;
+}
+        
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+        }
+
+       
+       
+ li {
+    display: inline;
+    margin-right: 50px;
+  }
+
+ a {
+     text-decoration: none;
+     color: white;
+ }
+ a:hover{
+    font-size: large;
+    color:rgb(27, 27, 105) ;
+ }
+ 
