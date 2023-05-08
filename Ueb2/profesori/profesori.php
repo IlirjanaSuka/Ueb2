@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FindYourWay</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="style.css" /> 
     <link rel="stylesheet" href="profesori.css" />
+  
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
@@ -26,16 +27,25 @@
       </nav>
       
       <div class="button-container">
-      <button class="dropdown">
-  Klasat
-  <select>
-    <option value="Matematike">Matematike</option>
-    <option value="Fizike">Ueb 1</option>
-    <option value="Kimi">Ueb 2</option>
+      <button>Klasat</button>
+        <button ><form>
+  <label for="class">Burimet:</label>
+  <select name="class" id="class" class="select1" onchange="location = this.value;">
+    <option value="">Zgjidhni një opsion:</option>
+    <option value="https://example.com/matematike">Matematike</option>
+    <option value="https://example.com/ueb1">Ueb 1</option>
+    <option value="https://example.com/ueb2">Ueb 2</option>
   </select>
-</button>
-        <button >Burimet/Resources</button>
-        <button >Studentet</button>
+</form></button>
+        <button ><form>
+  <label for="class">Studentet:</label>
+  <select name="class" id="class" class="select1" onchange="location = this.value;">
+    <option value="">Menagjo studentet:</option>
+    <option value="add.php">Shto student</option>
+    <option value="delete.php">Fshij student</option>
+    <option value="modify.php">Modifiko student</option>
+  </select>
+</form></button>
       </div>
       
     
