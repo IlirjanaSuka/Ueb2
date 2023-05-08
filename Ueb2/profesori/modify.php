@@ -22,16 +22,16 @@
       </nav>
         
     <form method="post"  class="student-form">
-  <label for="student_id">Student ID:</label>
+  <label for="student_id">ID e studentit:</label>
   <input type="number" name="student_id" id="student_id">
   <br>
-  <label for="name">Name:</label>
+  <label for="name">Emri:</label>
   <input type="text" name="name" id="name">
   <br>
-  <label for="email">Email:</label>
+  <label for="email">Email-i:</label>
   <input type="email" name="email" id="email">
   <br>
-  <input type="submit" name="update_student" value="Update Student">
+  <input type="submit" name="update_student" value="Studenti i modifikuar">
 </form>
 <?php
 
@@ -50,9 +50,9 @@ if (isset($_POST['update_student'])) {
    
     $sql = "UPDATE students SET name = '$name', email = '$email' WHERE id = '$student_id'";
     if (mysqli_query($conn, $sql)) {
-        echo "Student updated successfully.";
+        echo "Studenti u modifikua me sukses.";
     } else {
-        echo "Error updating student: " . mysqli_error($conn);
+        echo "Gabim gjate modifikimit te studentit: " . mysqli_error($conn);
     }
     
    
