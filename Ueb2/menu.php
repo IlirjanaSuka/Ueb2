@@ -1,21 +1,72 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    <link rel="stylesheet" href="menu.css">
-    </head>
+<head>
+    <title>Menu</title>
+    <style>
+        nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background:transparent;
+    border:2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+}
+
+nav a.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 5%;
+}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+            margin-right: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
 <body>
-<section class="main">
-            <nav>
-  <a href="#" class="logo">
+    <nav>
+    <a href="#" class="logo">
     <h1>FindYourWay</h1>
   </a>
-  <ul class="menu">
-    <li><a href="#"<?php if ($currentPage === 'home') { echo ' class="active"'; } ?>>Home</a></li>
-    <li><a href="#"<?php if ($currentPage === 'drejtimet') { echo ' class="active"'; } ?>>Drejtimet</a></li>
-    <li><a href="#"<?php if ($currentPage === 'login') { echo ' class="active"'; } ?>>LogIn</a></li>
-    <li><a href="#"<?php if ($currentPage === 'signup') { echo ' class="active"'; } ?>>SignUp</a></li>
-  </ul>
-</nav>
-</section>
-<script src="script.js"></script>
+    <?php
+    // Define the menu items
+    $menuItems = array(
+        array('Home', '#'),
+        array('About', '#'),
+        array('Courses', '#'),
+        array('Teachers', '#'),
+        array('Reviews', '#'),
+        array('Contact', '#')
+
+
+    );
+    ?>
+
+    <ul>
+        <?php
+        // Generate the menu items
+        foreach ($menuItems as $item) {
+            $label = $item[0];
+            $url = $item[1];
+            echo '<li><a href="' . $url . '">' . $label . '</a></li>';
+        }
+        ?>
+    </ul>
+    </nav>
 </body>
 </html>
