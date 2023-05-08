@@ -52,7 +52,7 @@
     <section class="about2">
   <div class="container1">
     <h2>Pershendetje!</h2>
-    <div class="p"><p ><b>Ne kete pjese mund te shtoni vendin ku jeni duke u shkolluar</b></p></div>
+    <div class="p"><p ><b>Ne kete pjese mund te shtoni vendin ku jeni duke dhene mesim:</b></p></div>
     <button>Shto lokacionin</button>
   </div>
 </section>
