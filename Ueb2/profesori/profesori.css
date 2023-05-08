@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
  
-body{
+.body2{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,10 +22,10 @@ body{
     border-radius: 10px;
 }
 
-a{
+.a2{
     text-decoration: none;
 }
-ul{
+.ul2{
     list-style: none;
 }
 
@@ -33,7 +33,7 @@ nput,button,textarea{
     border: none;
     outline: none;
 }
-nav{
+.nav3{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -42,10 +42,10 @@ nav{
     width: 100%;
     z-index: 1;
 }
-nav ul{
+.nav3 ul{
     display: flex;
 }
-nav ul li a{
+.nav3 ul li a{
     height: 40px;
     line-height: 43px;
     margin: 3px;
@@ -59,7 +59,7 @@ nav ul li a{
     transition: 0.6s ease-in-out;
     color: #fff;
 }
-nav ul li a:hover{
+.nav3 ul li a:hover{
     background-color: #f481a1;
     color: #fff;
     
@@ -267,5 +267,46 @@ button {
      padding: 15px 15px;
   }
   
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: #f481a1;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown select {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f481a1;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .dropdown:hover select {
+    display: block;
+  }
+  
+  .dropdown option {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    background-color: #f481a1;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .dropdown option:hover {
+    background-color: #e8275d;
+  }
   
   
