@@ -3,7 +3,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: url('space.png')no-repeat;
+    background:url('img1.png');
     border-bottom:2px solid rgba(255,255,255,0.5);
     backdrop-filter: blur(15px);
 }
@@ -12,7 +12,7 @@ nav a.logo {
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
-    color: rgb(51, 51, 90);
+    color:rgb(222,5,150);
     margin-left: 5%;
 }
         
@@ -31,10 +31,10 @@ ul {
 
  a {
      text-decoration: none;
-     color: white;
+     color:rgb(254,118,211);
  }
  a:hover{
     font-size: large;
-    color:rgb(27, 27, 105) ;
+    color:rgb(158,50,107) ;
  }
  
