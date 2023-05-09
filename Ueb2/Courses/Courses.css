@@ -1,0 +1,18 @@
+
+.box{
+    border-radius:.5rem;
+    padding:2rem;
+    background-color: rgb(116, 116, 225);
+    transition: box-shadow .3s;
+}
+.box:hover{
+    box-shadow: 0 0 20px rgb(255, 104, 132);
+}
+.teachers .box-container .box h3{
+    color:black;
+
+}
+img{
+    width: 150px;
+    height: 150px;
+}
