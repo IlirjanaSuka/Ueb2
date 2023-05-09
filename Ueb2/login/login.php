@@ -1,30 +1,3 @@
-<?php
-$error="";
-$success="";
-if($_SERVER['REQUEST_METHOD']=='POST'){
-$uname=$_POST['uname'];
-$pass=$_POST['pass'];
-
-    if($uname=='student'){
-      $hash=password_hash('password',PASSWORD_DEFAULT);
-      if(password_verify($pass,$hash)){
-            $success="Welcome Student!";
-            //redirect to another page on successful login
-            header("Location:student.php");
-        exit;
-      }
-        else{
-            $error="Invalid Password";
-            $success="";
-        }
-    }else{
-        $error="Invalid Username";
-        $success="";
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lange="en">
     <head>
@@ -63,30 +36,33 @@ $pass=$_POST['pass'];
     </ul>
     </nav>
 
-    <form method="POST" action="">
+    <form method="POST" action="login_check.php">
     <section>
         <div class="form-box">
             <div class="form-value">
             <form action="">
-                <h2>Login</h2>
-                <?php if($error):?>
-                    <p class="error-message"><?php echo $error;?></p>
-                    <?php endif; ?>
-                    <?php if ($success): ?>
-                        <p class="success-message"><?php echo $success; ?></p>
-                    <?php endif; ?>
+                <h2>Login
+                <h4>
+        <?php
+        error_reporting(0);
+        session_start();
+        session_destroy();
+        echo $_SESSION['loginMessage'];
+        ?>
+    </h4>  
+                </h2>
                 <div class="inputbox">
                 <ion-icon name="person-outline"></ion-icon>
-                    <input type="uname" name="uname" required>
+                    <input type="text" name="username" required>
                     <label for="">Username</label>
                 </div>
                     <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password"  name="pass" required>
+                    <input type="password"  name="password" required>
                     <label for="">Password</label>
                      </div>
 <div class="forget" >
-    <label for=""><input type="checkbox">Remember Me</input>
+    <label for=""><input type="checkbox">Remember Me!</input>
     <a href="#">Forget Password</a></label>
 </div>
 <button>Log in</button>
