@@ -13,15 +13,23 @@
     exit;
 }
 ?>
-<?php
-  $currentPage = 'signup';
-  include 'menu.php';
-?>
 <html>
     <head>
     <link rel="stylesheet" href="signup.css">
     </head>
     <body>
+          <nav>
+                <a href="#" class="logo">
+                    <h1>FindYourWay</h1>
+                </a>
+                <ul class="menu">
+                    <li><a href="home1.php" >Home</a></li>
+                    <li><a href="#">Drejtimet</a></li>
+                    <li><a href="#">Rreth nesh</a></li>
+                    <li><a href="login/login.php">LogIn</a></li>
+                    <li><a href="signup.php"class="active">SignUp</a></li>
+                </ul>
+            </nav>
     <form method="POST" action="" id="registration-form">
     <section class="register-section">
   <h2>SignUp</h2>
