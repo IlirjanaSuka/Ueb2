@@ -19,9 +19,9 @@
                 <ul class="menu">
                     <li><a href="#" class="active">Home</a></li>
                     <li><a href="#">Drejtimet</a></li>
-                    <li><a href="#">LogIn</a></li>
-                    <li><a href="#">SignUp</a></li>
                     <li><a href="#">Rreth nesh</a></li>
+                    <li><a href="login/login.php">LogIn</a></li>
+                    <li><a href="signup.php">SignUp</a></li>
                 </ul>
             </nav>
             <div class="main-heading">
