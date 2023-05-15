@@ -22,7 +22,7 @@
     </head>
     <body>
     <?php 
-        include 'components/header.php';
+        include 'header.php';
         ?>
         <div class="main">
         <section class="home-section">
@@ -222,7 +222,7 @@
         </section>
         <br>
         <br>
-        <?php include 'components/footer.php'; ?>
+        <?php include 'footer.php'; ?>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -273,7 +273,7 @@ slider.addEventListener('click', function(ev){
 })
         </script>
         <?php 
-        include 'components/alert.php';
+        include 'alert.php';
         ?>
     </body>
 </html>
