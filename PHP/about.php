@@ -56,6 +56,7 @@ include 'connection.php';
                 </div>
             </div>
         </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <section class="services">
             <div class="title">
                 <img src="download.png" class="logo">
@@ -139,10 +140,10 @@ include 'connection.php';
                 <div class="left-arrow" onclick="prevSlide()"><i class="bx bxs-right-arrow-alt"></i></div>
                 </div>
             </div>
-        </div>
         <?php
         include 'footer.php';
         ?>
+        </div>
     </div>
 </body>
 </html>
