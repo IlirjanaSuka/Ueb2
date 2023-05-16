@@ -1,5 +1,5 @@
 <?php
-include 'components/connection.php';
+include 'connection.php';
 session_start();
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
@@ -12,7 +12,7 @@ if(isset($_POST['logout'])){
 }
 if (isset($_POST['add_to_wishlist'])){
     $id = unique_id();
-    $product_id = $_POST['product_id']
+    $product_id = $_POST['product_id'];
 
     $varify_wishlist = $conn->prepare("SELECT * FROM 'wishlist' WHERE user_id = ? AND product_id = ?");
     $varify_wishlist->execute([$user_id, $product_id]);
@@ -37,7 +37,7 @@ if ($varify_wishlist->rowCount() > 0) {
 
 if (isset($_POST['add_to_cart'])){
     $id = unique_id();
-    $product_id = $_POST['product_id']
+    $product_id = $_POST['product_id'];
 
     $qty = $_POST['qty'];
     $qty = filter_var($qty, FILTER_SANITIZE_STRING);
@@ -76,7 +76,7 @@ if ($varify_cart->rowCount() > 0) {
         <title>Green coffee - product details page</title>
 </head>
 <body>
-    <?php include 'components/header.php'; ?>
+    <?php include 'header.php'; ?>
     <div class="main">
         <div class="banner">
             <h1>product details</h1>
@@ -115,10 +115,10 @@ if ($varify_cart->rowCount() > 0) {
             }
     ?>
     </section>
-    <?php include 'components/footer.php'; ?>
+    <?php include 'footer.php'; ?>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="script.js"></script>
-    <?php include 'components/alert.php'; ?>
+    <?php include 'alert.php'; ?>
     </body>
     </html>
