@@ -23,7 +23,6 @@ if(isset($_POST['update_cart'])){
 
     $success_msg[]='cart quantity updated seccessfully';
 }
-
 if(isset($_POST['delete_item'])){
     $cart_id=$_POST['$cart_id'];
     $cart_id=filter_var($cart_id,FILTER_SANITIZE_STRING);
@@ -115,8 +114,6 @@ if(isset($_POST['empty_cart'])){
  </div>
  <?php
  if($grand_total!=0){
-
-
  ?>
  <div class="cart-total">
     <p>total amount payable: <span>$ <?=$grand_total;?>/-</span></p>
