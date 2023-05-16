@@ -1,5 +1,5 @@
 <?php
-include connection.php;
+include 'connection.php';
 
 ?> 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include connection.php;
     <title>Green Coffee-about page</title>
 </head>
 <body>
-    <?php include header.php;?>
+    <?php include 'header.php';?>
     <div class="main">
         <div class="banner">
           <h1>About us</h1>
@@ -23,7 +23,7 @@ include connection.php;
         </div>
         <div class="about-category">
             <div class="box">
-                <img src="img/3.webp">
+                <img src="3.webp">
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon green</h1>
@@ -31,7 +31,7 @@ include connection.php;
                 </div>
             </div>
             <div class="box">
-                <img src="img/2.webp">
+                <img src="2.webp">
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon Teaname</h1>
@@ -39,7 +39,7 @@ include connection.php;
                 </div>
             </div>
             <div class="box">
-                <img src="img/about.png">
+                <img src="about.png">
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon Teaname</h1>
@@ -47,7 +47,7 @@ include connection.php;
                 </div>
             </div>
             <div class="box">
-                <img src="img/1.webp">
+                <img src="3.webp">
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon green</h1>
@@ -57,34 +57,34 @@ include connection.php;
         </div>
         <section class="services">
             <div class="title">
-                <img src="img/download.png" class="logo">
+                <img src="download.png" class="logo">
                 <h1>why choose us</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima facilis nostrum accusantium architecto odit consectetur aut libero quidem facere, ducimus eveniet veritatis deleniti est voluptatem at nesciunt culpa! Quas, illo!</p>
             </div>
             <div class="box-container">
                 <div class="box">
-                    <img src="img/icon2.png">
+                    <img src="h.png">
                     <div class="detail">
                         <h3>great savings</h3>
                         <p>save big every order</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="img/icon1.png">
+                    <img src="p.png">
                     <div class="detail">
                         <h3>24*7 support</h3>
                         <p>one-on-one support</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="img/icon0.png">
+                    <img src="o.png">
                     <div class="detail">
                         <h3>gift vouchers</h3>
                         <p>vouchers on every festivals</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="img/icon.png">
+                    <img src="j.png">
                     <div class="detail">
                         <h3>worldwide delivery</h3>
                       <p>dropship worldwide</p>
@@ -95,7 +95,7 @@ include connection.php;
         <div class="about">
           <div class="row">
             <div class="img-box">
-            <img src="img/3.png">
+            <img src="3.png">
             </div>
             <div class="detail">
                 <h1>visit our beautiful showroom!</h1>
@@ -110,26 +110,26 @@ include connection.php;
         </div>
         <div class="testimonial-container">
             <div class="title">
-                <img src="img/download.png" class="logo" >
+                <img src="leaf.png" class="logo" >
                 <h1>What people say about us</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, alias error vero quaerat quas hic voluptatum soluta asperiores optio
                  corrupti in voluptas magni accusamus delectus fuga eos perspiciatis rem illo?</p>
               </div>
                  <div class="container">
                 <div class="testimonial-item ">
-<img src="img/01.png">
+<img src="01.png">
 <h1>sara smith</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi. Temporibus culpa iusto ratione sapiente similique dolor eaque, alias dolorum.
      Explicabo, neque asperiores illo ab et tenetur quam. Ex, aperiam.</p>
                 </div>
                 <div class="testimonial-item ">
-<img src="img/02.png">
+<img src="02.png">
 <h1>john smith</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi. Temporibus culpa iusto ratione sapiente similique dolor eaque, alias dolorum.
      Explicabo, neque asperiores illo ab et tenetur quam. Ex, aperiam.</p>
                 </div>
                 <div class="testimonial-item ">
-<img src="img/03.png">
+<img src="03.png">
 <h1>selena ansari</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, excepturi. Temporibus culpa iusto ratione sapiente similique dolor eaque, alias dolorum.
      Explicabo, neque asperiores illo ab et tenetur quam. Ex, aperiam.</p>
@@ -140,7 +140,7 @@ include connection.php;
             </div>
         </div>
         <?php
-        include footer.php;
+        include 'footer.php';
         ?>
     </div>
 </body>
