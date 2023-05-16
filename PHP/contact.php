@@ -1,126 +1,135 @@
-<style>
-    <?php include 'style.css'?>
-</style>
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+include 'connection.php';
+session_start();
+if(isset($_SESSION['user_id'])){
+    $user_id=$_SESSION['user_id'];
+}else{
+    $user_id='';
+}
+
+if(isset($_POST['logout'])){
+    session_destroy();
+    header("location:login.php");
+}
+//update product in cart
+if(isset($_POST['update_cart'])){
+    $cart_id=$_POST['cart_id'];
+    $cart_id=filter_var($cart_id,FILTER_SANITIZE_STRING);
+    $qty=$_POST['qty'];
+    $qty=filter_var($qty,FILTER_SANITIZE_STRING);
+
+    $update_qty=$conn->prepare("UPDATE 'cart' SET qty=? WHERE id=?" );
+    $update_qty->execute([$qty,$cart_id]);
+
+    $success_msg[]='cart quantity updated seccessfully';
+}
+if(isset($_POST['delete_item'])){
+    $cart_id=$_POST['$cart_id'];
+    $cart_id=filter_var($cart_id,FILTER_SANITIZE_STRING);
+    $varify_delete_items=$conn->prepare("SELECT*FROM 'cart' WHERE id=?");
+    $varify_delete_items->execute([$cart_id]);
+    if($varify_delete_items->rowCount()>0){
+        $delete_cart_id=$conn->prepare("DELETE FROM 'cart' WHERE id=?");
+        $delete_cart_id->execute([$cart_id]);
+        $success_msg[]="cart item delete successfully";
+    }else{
+        $warning_msg[]='cart item already deleted';
+    }
+}
+//empty cart
+if(isset($_POST['empty_cart'])){
+    $varify_empty_item=$conn->prepare("SELECT*FROM 'cart' WHERE user_id=?");
+    $varify_empty_item->execute([$user_id]);
+
+    if($varify_empty_item->rowCount()>0){
+        $delete_cart_id=$conn->prepare("DELETE FROM 'cart' WHERE user_id=?");
+        $delete_cart_id->execute([$user_id]);
+        $success_msg[]="empty successfully";
+    }else{
+        $warning_msg[]='cart item already deleted';
+    }
+}
+?>
+<style type="text/css">
+    <?php include'style.css';?>
+    </style>
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fon-awesome/6.0.0-bets3/css/all.min.css">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-        <script
-  src="https://code.jquery.com/jquery-3.7.0.js"
-  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-  crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <title>Green Coffe - contact us</title>
-        
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+         <title>Green Coffee-cart page</title>
     </head>
     <body>
-    <?php 
-        include 'header.php';
-        ?>
-    <div class="main">
+        <?php include 'header.php';?>
         <div class="banner">
-          <h1>contact us</h1>
+            <h1>my cart</h1>
         </div>
         <div class="title2">
-         <a href="home.php">home</a><span> /contact us</span>
-        </div><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <section class="services">
-            <div class="box-container">
-                <div class="box">
-                <img src="img/h.png">
-                <div class="detail">
-                    <h3>great savings</h3>
-                    <p>save big every order</p>
-                </div>
-                </div>
-                <div class="box">
-                <img src="img/p.png">
-                <div class="detail">
-                    <h3>24*7 support</h3>
-                    <p>one-on-one support</p>
-                </div>
-                </div>
-                <div class="box">
-                <img src="img/o.png">
-                <div class="detail">
-                    <h3>gift vouchers</h3>
-                    <p>vouchers on every festivals</p>
-                </div>
-                </div>
-                <div class="box">
-                <img src="img/j.png">
-                <div class="detail">
-                    <h3>worldwide delivery</h3>
-                    <p>dropship worldwide</p>
-                </div>
-              </div>
-            </div>
-        </section>
-        <div class="form-container">
-            <form method="post">
-                <div class="title">
-                    <img src="img/im.png"class="logo">
-                    <h1>leave a message</h1>
-                </div>
-                <div class="input-field">
-                    <p>your email<sup>*</sup></p>
-                    <input type="text" name="email">
-                </div>
-                <div class="input-field">
-                    <p>your number<sup>*</sup></p>
-                    <input type="text" name="number">
-                </div>
-                <div class="input-field">
-                    <p>your message<sup>*</sup></p>
-                    <textarea name="message"></textarea>
-                </div>
-                <button type="submit" name="submit-btn" class="btn">send message</button>
-            </form>
+            <a href="home.php">home</a><span>cart</span>
         </div>
-        <div class="address">
-                <div class="title">
-                    <img src="img/im.png"class="logo">
-                    <h1>contact detail</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="box-container">
-                    <div class="box">
-                        <i class="bx bxs-map-pin"></i>
-                        <div>
-                            <h4>address</h4>
-                            <p>1092 Merigold Lane, Coral Way</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <i class="bx bxs-phone-call"></i>
-                        <div>
-                            <h4>phone number</h4>
-                            <p>263748297473</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <i class="bx bxs-map-pin"></i>
-                        <div>
-                            <h4>email</h4>
-                            <p>sdhsye@hrurujr.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <br>
-        <br>
-        <?php include 'footer.php'; ?>
+<section class="products">
+ <h1 class="title">
+    products added in car
+ </h1>  
+ <div class="box-container">
+    <?php
+    $grand_total = 0;
+    $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+    $select_cart->execute([$user_id]);
+    if($select_cart->rowCount()>0){
+        while($fetch_cart=$select_cart->fetch(PDO::FETCH_ASSOC)){
+            $select_products=$conn->prepare("SELECT * FROM 'products' WHERE id=?");
+            $select_products->execute([$fetch_cart['product_id']]);
+            if($select_products->rowCount()>0){
+                $fetch_products=$select_products->fetch(PDO::FETCH_ASSOC);
+    ?>
+    <form method="post" action="" class="box">
+        <input type="hidden" name="cart_id" value="<?=$fetch_cart['id'];?>">
+        <img src="image/<?=$fetch_products['image'];?>" class="img">
+        <h3 class="name"><?=$fetch_products['name'];?></h3>
+        <div class="flex">
+            <p class="price">
+                price $<?=$fetch_products['price'];?>/-
+            </p>
+            <input type="number" name="qty" required min="1" value="<?=$fetch_cart['qty'];?>"max="99" maxlength="2" class="qty">
+            <button type="submit" name="update_cart" class="bx bxs-edit fa-edit"></button>
+        </div>
+        <p class="sub-total">sub total: <span>$<?=$sub_total=($fetch_cart['qty']*$fetch_cart['price'])?></span></p>
+        <button type="submit" name="delete_item" class="btn" onclick="return confirm('delete this item')">delete</button>
+    </form>
+    <?php
+    $grand_total+=$sub_total;
+
+            }else{
+                echo '<p class="empty">product was not found</p>';
+            }
+        }
+    }else{
+        echo '<p class="empty">no products added yet!</p>';
+    }
+    ?>
+ </div>
+ <?php
+ if($grand_total!=0){
+ ?>
+ <div class="cart-total">
+    <p>total amount payable: <span>$ <?=$grand_total;?>/-</span></p>
+    <div class="button">
+        <form method="post">
+            <button type="submit" name="empty_cart" class="btn" onclick="return confirm('are you sure to empty your cart')">empty cart</button>
+        </form>
+        <a href="checkout.php" class="btn">proceed to checkout</a>
     </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="script.js"></script>
-    
-    </body>
+ </div>
+ <?php } ?>
+</section>
+<?php include 'footer.php';?>
+</div>
+<script src="https://sdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="script.js"></script>
+<?php include 'alert.php';?>
+</body>
 </html>
