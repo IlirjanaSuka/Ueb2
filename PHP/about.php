@@ -9,6 +9,7 @@ include 'connection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
     
     <title>Green Coffee-about page</title>
 </head>
@@ -47,7 +48,7 @@ include 'connection.php';
                 </div>
             </div>
             <div class="box">
-                <img src="3.webp">
+                <img src="1.webp">
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon green</h1>
@@ -63,28 +64,28 @@ include 'connection.php';
             </div>
             <div class="box-container">
                 <div class="box">
-                    <img src="h.png">
+                    <img src="icon2.png">
                     <div class="detail">
                         <h3>great savings</h3>
                         <p>save big every order</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="p.png">
+                    <img src="icon1.png">
                     <div class="detail">
                         <h3>24*7 support</h3>
                         <p>one-on-one support</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="o.png">
+                    <img src="icon0.png">
                     <div class="detail">
                         <h3>gift vouchers</h3>
                         <p>vouchers on every festivals</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="j.png">
+                    <img src="icon.png">
                     <div class="detail">
                         <h3>worldwide delivery</h3>
                       <p>dropship worldwide</p>
@@ -110,7 +111,7 @@ include 'connection.php';
         </div>
         <div class="testimonial-container">
             <div class="title">
-                <img src="leaf.png" class="logo" >
+                <img src="download.png" class="logo" >
                 <h1>What people say about us</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, alias error vero quaerat quas hic voluptatum soluta asperiores optio
                  corrupti in voluptas magni accusamus delectus fuga eos perspiciatis rem illo?</p>
