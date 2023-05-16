@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
         <div class="main-container">
            <section class="form-container">
             <div class="tittle">
-                <img src="" >
+                <img src="ingredient.jpg" >
                 <h1>register now</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing. ...</p>
             </div>
@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
                 </div>
                 <div class="input-filed">
                     <p>your email<sup>*</sup></p>
-                    <input type="email" name="email", required placeholder="enter your naemailme" maxlength="50"
+                    <input type="email" name="email", required placeholder="enter your email" maxlength="50"
                      oninput="this.value=this.value.replace(/\s/g, '')" >
                 </div>
                 <div class="input-filed">
