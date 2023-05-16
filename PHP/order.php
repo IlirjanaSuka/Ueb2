@@ -10,12 +10,9 @@ if(isset($_POST['logout'])){
     session_destroy();
     header('location:login.php');
 }
-
-
 ?>
-<style type="text/css"><?php include 'style.css;' ?>
+<style type="text/css"><?php include 'style.css'; ?>
 </style>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,7 +22,7 @@ if(isset($_POST['logout'])){
         <title>Green Coffer-order page</title>
     </head>
     <body>
-        <?php include 'header.php;' ?>
+        <?php include 'header.php'; ?>
         <div class="main">
             <div class="banner">
                 <h1>my order</h1>
@@ -35,7 +32,7 @@ if(isset($_POST['logout'])){
             </div>
             <section class="orders">
                 <div class="title">
-                    <img src="#" class="logo">
+                    <img src="sh.jpg" class="logo">
                     <h1>my orders</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. ...</p>
                 </div>
@@ -63,7 +60,6 @@ if(isset($_POST['logout'])){
                                      </div>
                                 </a>
                                     </div>
-
                                     <?php
                                 }
                             }
@@ -72,8 +68,7 @@ if(isset($_POST['logout'])){
                         echo '<p class="empty">no order takes placed yet!</p>';
                     }
                      ?>
-                </div>
-               
+                </div>               
             </section>
             <?php include 'footer.php'; ?>
         </div>
@@ -81,5 +76,4 @@ if(isset($_POST['logout'])){
         <script src="script.js"></script>
         <?php include 'alert.php'; ?>
     </body>
-
 </html>
