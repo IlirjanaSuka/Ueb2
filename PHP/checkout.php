@@ -35,7 +35,7 @@ if(isset($_POST['logout'])){
         </div>
 <section class="checkout">
 <div class="title">
-    <img src="img/download.png" class="logo">
+    <img src="leaf.png" class="logo">
     <h1>checkout summary</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam repudiandae consequatur, voluptas velit ducimus dolore, nihil nemo esse et dolores dolor dicta a neque est dolorem vero eaque saepe magnam.</p>
 </div>
