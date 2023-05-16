@@ -1003,13 +1003,20 @@ textarea{
 .form-container p{
     color: var(--green);
 }
+.form-container h1{
+    color: #2a591f;
+    text-transform: uppercase;
+}
 .form-container sup{
     color: #2a591f;
     font-size: 1.2rem;
 }
 .main-container input[type=submit]{
-    color: #000!important;
+    color: #2a591f!important;
     cursor: pointer;
+}
+.main-container input[type=submit]:hover{
+    background-color: #87a243;
 }
 .form-container form{
     margin: 1rem auto;
