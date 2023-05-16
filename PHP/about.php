@@ -20,7 +20,7 @@ include 'connection.php';
           <h1>About us</h1>
         </div>
         <div class="title2">
-         <a href="home.php">home</a><span>about</span>
+         <a href="home.php">home</a><span> /about</span>
         </div>
         <div class="about-category">
             <div class="box">
