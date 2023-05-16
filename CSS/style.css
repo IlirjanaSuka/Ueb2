@@ -423,14 +423,18 @@ a{
     font-size: 1rem;
     margin: 1rem 0;
     line-height: 2;
+    color: #2a591f;
 }
 .title p{
     text-transform: capitalize;
 }
+.title .logo{
+    width: 80px;
+}
 ul{
     list-style: none;
 }
-sup{
+.icons sup{
     position: absolute;
     top: 15%;
     background: #2a591f;
@@ -507,7 +511,7 @@ button{
     cursor: pointer;
 }
 .banner{
-    background-image: url('');
+    background-image: url('img/4.jpg');
     background-size: cover;
     background-position: center;
     background-color: var(--green);
@@ -531,6 +535,9 @@ button{
 }
 .title2{
     color: var(--green);
+}
+.title2 a{
+    color: #2a591f;
 }
 /*header*/
 header{
@@ -957,7 +964,96 @@ header.scrollbar{
 .services img{
     width: 30%;
 }
-
+/*contact*/
+.main-container{
+    background: #fff;
+    width: 60vw;
+    min-width: 80vh;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem 0;
+}
+.form-container {
+    width: 50vw;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.form-container input, textarea{
+    background-color: transparent;
+    width: 85%;
+}
+textarea{
+    height: 200px;
+}
+.form-container p{
+    color: var(--green);
+}
+.form-container sup{
+    color: #2a591f;
+    font-size: 1.2rem;
+}
+.main-container input[type=submit]{
+    color: #000!important;
+    cursor: pointer;
+}
+.form-container form{
+    margin: 1rem auto;
+    background-color: rgb(255, 255, 255/80%);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    position: relative;
+    border-radius: 5px;
+}
+.form-container form p{
+    text-transform: uppercase;
+}
+.form-container form input{
+    width: 85%;
+}
+.form-container form button{
+    width: 85%;
+    border-radius: 10px;
+    outline: none;
+}
+.address{
+    background-color: #e0ffcd9e;
+    padding: 4rem auto;
+    min-height: 50vh;
+}
+.address .box-container{
+    justify-content: center;
+    align-items: center;
+}
+.address .box-container .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    line-height: 2;
+    padding: 1rem 0;
+}
+.address .box-container .box h4{
+    text-transform: uppercase;
+    color: var(--green);
+}
+.address .box-container .box i{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green);
+    color: #fff;
+}
 /*footer*/
 .top-footer{
     width: 100%;
@@ -1083,4 +1179,3 @@ footer .bottom-footer{
         width: 100%;
     }
 }
-
