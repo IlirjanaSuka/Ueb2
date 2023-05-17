@@ -3,43 +3,43 @@ include 'connection.php';
 session_start();
 
 if(isset($_SESSION['user_id'])){
-    $user_id=$_SESSION['user_id'];
+    $user_id = $_SESSION['user_id'];
 }else{
-    $user_id='';
+    $user_id = '';
 }
 
 if(isset($_POST['submit'])){
-    $id=uniqid();
-    $name=$_POST['name'];
-    $name=filter_var($name, FILTER_SANITIZE_STRING);
-    $email=$_POST['email'];
-    $email=filter_var($email, FILTER_SANITIZE_STRING);
-    $pass=$_POST['pass'];
-    $pass=filter_var($pass, FILTER_SANITIZE_STRING);
-    $cpass=$_POST['cpass'];
-    $cpass=filter_var($cpass, FILTER_SANITIZE_STRING);
+    $name = $_POST['name'];
+    $name = filter_var($name, FILTER_SANITIZE_STRING);
+    $email = $_POST['email'];
+    $email = filter_var($email, FILTER_SANITIZE_STRING);
+    $pass = $_POST['pass'];
+    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+    $cpass = $_POST['cpass'];
+    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
-    $select_user=$conn->prepare("SELECT * FROM `users` WHERE email=?");
+    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email=?");
     $select_user->execute([$email]);
-    $row=$select_user->fetch(PDO::FETCH_ASSOC);
 
-    if($select_user->rowCount()>0){
-        $message[]='email already exist';
-        echo 'email already exist';
+    if($select_user->rowCount() > 0){
+        $message[] = 'Email already exists';
+        echo 'Email already exists';
     }else{
-        if($pass!=$cpass){
-            $message[]='confirm your password';
-            echo 'confirm your password';
+        if($pass != $cpass){
+            $message[] = 'Confirm your password';
+            echo 'Confirm your password';
         }else{
-            $insert_user=$conn->prepare("INSERT INTO `users`(id, name, email, password) VALUES(?,?,?,?)");
-            $insert_user->execute([$id, $name, $email, $pass]);
-            $select_user=$conn->prepare("SELECT * FROM `users` WHERE email=? and password=?");
+            $insert_user = $conn->prepare("INSERT INTO `users` (name, email, password) VALUES (?, ?, ?)");
+            $insert_user->execute([$name, $email, $pass]);
+
+            $select_user = $conn->prepare("SELECT * FROM `users` WHERE email=? AND password=?");
             $select_user->execute([$email, $pass]);
-            $row=$select_user->fetch(PDO::FETCH_ASSOC);
-            if($select_user->rowCount()>0){
-                $_SESSION['user_id']=$row['id'];
-                $_SESSION['user_name']=$row['name'];
-                $_SESSION['user_email']=$row['email'];
+            $row = $select_user->fetch(PDO::FETCH_ASSOC);
+
+            if($select_user->rowCount() > 0){
+                $_SESSION['user_id'] = $row['id'];
+                $_SESSION['user_name'] = $row['name'];
+                $_SESSION['user_email'] = $row['email'];
             }
         }
     }
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
         <div class="main-container">
            <section class="form-container">
             <div class="tittle">
-                <img src="ingredient.jpg" >
+                <img src="im.png" >
                 <h1>register now</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing. ...</p>
             </div>
