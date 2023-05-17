@@ -1,5 +1,5 @@
 <?php
-
+include 'connection.php';
 session_start();
 
 if(isset($_SESSION['user_id'])){
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
         <div class="main-container">
            <section class="form-container">
             <div class="tittle">
-                <img src="img/im.png" >
+                <img src="im.png" >
                 <h1>login now</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing. ...</p>
             </div>
@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
                     oninput="this.value=this.value.replace(/\s/g, '')">
                 </div>
                 <input type="submit" name="submit" value="register now" class="btn">
-                <p>do not  have an account? <a href="resgister.php">register now</a></p>
+                <p>do not  have an account? <a href="register.php">register now</a></p>
             </form>
            </section>
         </div>
