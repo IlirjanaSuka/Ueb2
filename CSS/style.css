@@ -38,7 +38,8 @@
 }
 
 .about-category .box .detail .btn {
-    opacity: .0;
+    background-color: #87a243;
+    color: #2a591f;
 }
 .title .logo{
     width: 100px;
@@ -65,18 +66,19 @@
     margin:1rem 0;
 }
 .testimonial-container{
-    padding:6% 0;
-    background-image:url('bg.jpg') ;
+    padding:4% 0;
+    background-color: #e0ffcd9e;
+    height: 30%;
 }
 .testimonial-container .container{
     position: relative;
-    perspective: 1000;
+    perspective: 500;
     padding-top:2rem;
 }
 .testimonial-container .container .testimonial-item{
 border-radius: 5px;
 box-shadow: var(--box-shadow);
-color: gray;
+color:grey;
 width:50vw;
 margin:0 auto;
 text-align: center;
@@ -111,7 +113,9 @@ animation: slide .4s linear;
 .testimonial-container .container .testimonial-item img{
     padding:1rem 0;
     border-radius:50%;
+    width: 30%;
 }
+
 .testimonial-container .container .left-arrow,
 .testimonial-container .container .right-arrow{
     position: absolute;
@@ -498,6 +502,7 @@ ul{
 }
 .btn:hover::before{
     width: 100%;
+    background-color:green;
 }
 label{
     text-transform: capitalize;
@@ -736,7 +741,7 @@ header.scrollbar{
     color: #000;
 }
 .right-arrow{
-    right: 1rem;
+    right: 3rem;
 }
 .left-arrow{
     left: 3rem;
