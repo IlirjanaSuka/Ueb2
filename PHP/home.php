@@ -226,52 +226,45 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="script.js"></script>
+       <!--<script src="script.js"></script>-->
         <script>
-            
-            const leftArrow = document.querySelector('.left-arrow .bxs-left-arrow'),
-rightArrow = document.querySelector('.right-arrow .bxs-right-arrow'),
-slider = document.querySelector('.slider');
+           
+  const leftArrow = document.querySelector('.left-arrow i'),
+        rightArrow = document.querySelector('.right-arrow i'),
+        slider = document.querySelector('.slider');
 
-function scrollRight(){
-    if(slider.scrollWidth - slider.clientWidth === slider.scrollLeft){
-        slider.scrollTo({
-            left:0,
-            behavior: "smooth"
-        });
-    }else{
-        slider.scrollBy({
-            left: window.innerWidth,
-            behavior:"smooth"
-        })
+  function scrollRight() {
+    if (slider.scrollWidth - slider.clientWidth === slider.scrollLeft) {
+      slider.scrollTo({
+        left: 0,
+        behavior: "smooth"
+      });
+    } else {
+      slider.scrollBy({
+        left: window.innerWidth,
+        behavior: "smooth"
+      });
     }
-}
-function scrollLeft(){
+  }
+
+  function scrollLeft() {
     slider.scrollBy({
-        left: -window.innerWidth,
-            behavior:"smooth"
-    })
-}
-let timerId = setInterval(scrollRight,7000);
+      left: -window.innerWidth,
+      behavior: "smooth"
+    });
+  }
 
-function resetTimer(){
+  let timerId = setInterval(scrollRight, 7000);
+
+  function resetTimer() {
     clearInterval(timerId);
-    timerId=setInterval(scrollRight,7000)
-}
+    timerId = setInterval(scrollRight, 7000);
+  }
 
-slider.addEventListener('click', function(ev){
-    if(ev.target === leftArrow){
-        scrollLeft();
-        resetTimer();
-    }
-})
-slider.addEventListener('click', function(ev){
-    if(ev.target === rightArrow){
-        scrollRight();
-        resetTimer();
-    }
-})
-        </script>
+  leftArrow.addEventListener('click', scrollLeft);
+  rightArrow.addEventListener('click', scrollRight);
+  slider.addEventListener('click', resetTimer);
+</script>
         <?php 
         include 'alert.php';
         ?>
