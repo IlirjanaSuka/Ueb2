@@ -1,7 +1,3 @@
-<?php
-include 'connection.php';
-
-?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +6,7 @@ include 'connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    
+
     <title>Green Coffee-about page</title>
 </head>
 <body>
@@ -24,19 +20,19 @@ include 'connection.php';
         </div>
         <div class="about-category">
             <div class="box">
-                <img src="3.webp">
+                <img src="32.png">
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon green</h1>
-                    <a href="view_products.php" class="btn">shop now</a>
+                    <a href="view_product.php" class="btn">shop now</a>
                 </div>
             </div>
             <div class="box">
-                <img src="2.webp">
+                <img src="2.png">
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon Teaname</h1>
-                    <a href="view_products.php" class="btn">shop now</a>
+                    <a href="view_product.php" class="btn">shop now</a>
                 </div>
             </div>
             <div class="box">
@@ -44,49 +40,49 @@ include 'connection.php';
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon Teaname</h1>
-                    <a href="view_products.php" class="btn">shop now</a>
+                    <a href="view_product.php" class="btn">shop now</a>
                 </div>
             </div>
             <div class="box">
-                <img src="1.webp">
+                <img src="32.png">
                 <div class="detail">
                     <span>coffee</span>
                     <h1>lemon green</h1>
-                    <a href="view_products.php" class="btn">shop now</a>
+                    <a href="view_product.php" class="btn">shop now</a>
                 </div>
             </div>
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <section class="services">
             <div class="title">
-                <img src="download.png" class="logo">
+                <img src="im.png" class="logo">
                 <h1>why choose us</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima facilis nostrum accusantium architecto odit consectetur aut libero quidem facere, ducimus eveniet veritatis deleniti est voluptatem at nesciunt culpa! Quas, illo!</p>
             </div>
             <div class="box-container">
                 <div class="box">
-                    <img src="icon2.png">
+                    <img src="h.png">
                     <div class="detail">
                         <h3>great savings</h3>
                         <p>save big every order</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="icon1.png">
+                    <img src="p.png">
                     <div class="detail">
                         <h3>24*7 support</h3>
                         <p>one-on-one support</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="icon0.png">
+                    <img src="o.png">
                     <div class="detail">
                         <h3>gift vouchers</h3>
                         <p>vouchers on every festivals</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="icon.png">
+                    <img src="j.png">
                     <div class="detail">
                         <h3>worldwide delivery</h3>
                       <p>dropship worldwide</p>
@@ -112,7 +108,7 @@ include 'connection.php';
         </div>
         <div class="testimonial-container">
             <div class="title">
-                <img src="download.png" class="logo" >
+                <img src="im.png" class="logo" >
                 <h1>What people say about us</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, alias error vero quaerat quas hic voluptatum soluta asperiores optio
                  corrupti in voluptas magni accusamus delectus fuga eos perspiciatis rem illo?</p>
@@ -143,7 +139,37 @@ include 'connection.php';
         <?php
         include 'footer.php';
         ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="script.js"></script>
+        <script>
+  let currentSlide = 0;
+  const testimonials = document.querySelectorAll('.testimonial-item');
+
+  function showSlide(index) {
+    testimonials.forEach((testimonial) => testimonial.style.display = 'none');
+    testimonials[index].style.display = 'block';
+  }
+
+  function nextSlide() {
+    currentSlide++;
+    if (currentSlide >= testimonials.length) {
+      currentSlide = 0;
+    }
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = testimonials.length - 1;
+    }
+    showSlide(currentSlide);
+  }
+
+  showSlide(currentSlide);
+</script>
         </div>
-    </div>
+  
 </body>
 </html>
