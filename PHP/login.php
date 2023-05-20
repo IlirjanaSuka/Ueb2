@@ -33,35 +33,35 @@ if(isset($_POST['submit'])){
 </style>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>green tea-login now</title>
-</head>
-<body>
-    <div class="main-container">
-       <section class="form-container">
-        <div class="tittle">
-            <img src="im.png" >
-            <h1>login now</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing. ...</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>green tea-login now</title>
+    </head>
+    <body>
+        <div class="main-container">
+           <section class="form-container">
+            <div class="tittle">
+                <img src="im.png" >
+                <h1>login now</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing. ...</p>
+            </div>
+            <form action="" method="post">
+                <div class="input-filed">
+                    <p>your email<sup>*</sup></p>
+                    <input type="email" name="email", required placeholder="enter your naemailme" maxlength="50"
+                     oninput="this.value=this.value.replace(/\s/g, '')" >
+                </div>
+                <div class="input-filed">
+                    <p>your password<sup>*</sup></p>
+                    <input type="password" name="pass", required placeholder="enter your password" maxlength="50"
+                    oninput="this.value=this.value.replace(/\s/g, '')">
+                    <a class="pass" href="forgotpassword.php"><p>Forgot Password?</p></a>
+                </div>
+                <input type="submit" name="submit" value="register now" class="btn">
+                <p>do not  have an account? <a href="register.php">register now</a></p>
+            </form>
+           </section>
         </div>
-        <form action="" method="post">
-            <div class="input-filed">
-                <p>your email<sup>*</sup></p>
-                <input type="email" name="email" required placeholder="enter your email" maxlength="50"
-                 oninput="this.value=this.value.replace(/\s/g, '')" >
-            </div>
-            <div class="input-filed">
-                <p>your password<sup>*</sup></p>
-                <input type="password" name="pass" required placeholder="enter your password" maxlength="50"
-                oninput="this.value=this.value.replace(/\s/g, '')">
-            </div>
-            <input type="submit" name="submit" value="Login" class="btn">
-            <p>Forgot your password? <a href="forget_password.php">Reset it</a></p>
-            <p>Do not have an account? <a href="register.php">Register now</a></p>
-        </form>
-       </section>
-    </div>
-</body>
+    </body>
 </html>
