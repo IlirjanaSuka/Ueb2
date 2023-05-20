@@ -11,72 +11,13 @@
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-        <script
-  src="https://code.jquery.com/jquery-3.7.0.js"
-  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-  crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-  $(document).ready(function() {
-    var cookieBar = document.getElementById("cookieBar");
-    var yesAgreeBtn = document.querySelector(".yesiagree");
-    var noAgreeBtn = document.querySelector(".noiagre");
-
-    // Function to hide the cookie bar
-    function hideCookieBar() {
-      if (cookieBar) {
-        cookieBar.style.display = "none";
-      }
-    }
-
-    // Function to show the cookie bar
-    function showCookieBar() {
-      if (cookieBar) {
-        cookieBar.style.display = "block";
-      }
-    }
-
-    // Check if the user has already agreed to the cookies
-    if (getCookie('home_cookie_bar')) {
-      hideCookieBar();
-    }
-
-    // Event listener for "Yes, I agree" button
-    if (yesAgreeBtn) {
-      yesAgreeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.cookie = "home_cookie_bar=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
-        hideCookieBar();
-      });
-    }
-
-    // Event listener for "No, I don't agree" button
-    if (noAgreeBtn) {
-      noAgreeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.cookie = "home_cookie_bar=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        hideCookieBar();
-      });
-    }
-  });
+       <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   
-  // Function to get cookie value by name
-  function getCookie(name) {
-    var cookieArr = document.cookie.split(";");
-
-    for (var i = 0; i < cookieArr.length; i++) {
-      var cookiePair = cookieArr[i].split("=");
-
-      if (name === cookiePair[0].trim()) {
-        return decodeURIComponent(cookiePair[1]);
-      }
-    }
-
-    return null;
-  }
-</script>
         <title>Green Coffe - home page</title>
-        
+        <?php 
+        include 'cookies.php';
+        ?>
     </head>
     <body>
     <?php 
@@ -142,17 +83,6 @@
             <!------->
             <div class="left-arrow"><i class="bx bx-left-arrow"></i></div>
             <div class="right-arrow"><i class="bx bx-right-arrow"></i></div>
-            <!-- Cookie bar section -->
-             <div id="cookieBar" class="popup">
-               <div class="popup-content">
-                <span>We use cookies on this site to enhance your experience.</span>
-                <abbr>By clicking any link on this website, you are giving us consent for us to set cookies</abbr>
-                <div class="btnWrap">
-                   <a href="#" class="btn3 yesiagree">Yes, I agree</a>
-                   <a href="#" class="btn3 noiagre">No, I don't agree</a>
-                </div>
-               </div>
-             </div>
          </div>
         <!------->
         </section>
@@ -228,7 +158,7 @@
                     <a href="view_product.php" class="btn">shop now</a>
                 </div>
                 <div class="box">
-                    <img src="img/green-coffee-powder-frnt_600x.webp">
+                    <img src="green-coffee-powder-frnt_600x.webp">
                     <a href="view_product.php" class="btn">shop now</a>
                 </div>
                 <div class="box">
