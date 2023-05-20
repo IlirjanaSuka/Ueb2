@@ -1347,3 +1347,68 @@ footer .bottom-footer{
 .cart-total .button .btn{
     margin: 1rem;
 }
+/*Cookie*/
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: #87a243;
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup-content span {
+    font-size: 16px;
+    color: #e0ffcd;
+}
+
+.popup-content abbr {
+    font-weight: bold;
+    color: #e0ffcd;
+}
+
+.popup-content .btnWrap .btn3{
+    margin-top: 20px;
+    line-height: 2;
+    background-color: #e0ffcd;
+    padding: 5px 35px;
+    display: inline-block;
+    border-radius: 30px;
+    color: #87a243;
+    text-transform: capitalize;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+.btn3::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    background: #87a243bf;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.btn3:hover::before{
+    width: 100%;
+    background-color:#87a243bf;
+}
