@@ -16,7 +16,7 @@
   
         <title>Green Coffe - home page</title>
         <?php 
-        include 'cookies.php';
+        include 'index.php';
         ?>
     </head>
     <body>
