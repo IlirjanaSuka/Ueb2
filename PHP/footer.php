@@ -1,4 +1,4 @@
-   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fon-awesome/6.0.0-bets3/css/all.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -10,6 +10,7 @@
         <button class="btn">subscribe</button>
     </div>
 </div>
+<link rel="stylesheet" href="style.css">
 <footer>
     <div class="overlay"></div>
         <div class="inner-footer">
@@ -19,7 +20,6 @@
                     <li>about us</li>
                     <li>help center</li>
                     <li>shipping</li>
-                    <a href="API.php" class="btn btn-primary"><li>API</a></li>
                     <li>account detail</li>
                     <li>my account</li>
                 </ul>
