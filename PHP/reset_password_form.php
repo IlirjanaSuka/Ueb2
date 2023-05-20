@@ -1,3 +1,5 @@
+
+<link rel="stylesheet" href="style.css">
 <?php
 if (isset($_GET['error']) && $_GET['error'] == 1) {
     echo "Fjalëkalimi i ri dhe konfirmimi i tij nuk përputhen.";
@@ -12,7 +14,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
     <title>Document</title>
 </head>
 <body>
-<form method="post" action="reset_password_process.php">
+<form method="post" action="reset_password_process.php" class="form-container">
     <input type="hidden" name="email" value="<?php echo $email; ?>">
     <input type="text" name="reset_code" placeholder="Kodi i rivendosjes së fjalëkalimit">
     <input type="password" name="new_password" placeholder="Fjalëkalimi i ri">
