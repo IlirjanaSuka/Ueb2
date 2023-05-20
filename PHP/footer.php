@@ -1,13 +1,8 @@
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fon-awesome/6.0.0-bets3/css/all.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-        <script
-  src="https://code.jquery.com/jquery-3.7.0.js"
-  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-  crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <div class="top-footer">
     <h2><i class="bx bx-envelope"></i>Sign Up For NewsLatter</h2>
     <div class="input-field">
@@ -24,7 +19,7 @@
                     <li>about us</li>
                     <li>help center</li>
                     <li>shipping</li>
-                    <li>term of use</li>
+                    <a href="API.php" class="btn btn-primary"><li>API</a></li>
                     <li>account detail</li>
                     <li>my account</li>
                 </ul>
@@ -41,10 +36,10 @@
                 </ul>
             </div>
             <div class="card">
-                <h3>NewsLetter</h3>
+               <h3>NewsLetter</h3>
                 <p>Sign Up For NewsLatter</p>
                 <div class="social-links">
-                   <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
                    <i class="fa-brands fa-twitter"></i>
                    <i class="fa-brands fa-behance"></i>
                    <i class="fa-brands fa-youtube"></i>
