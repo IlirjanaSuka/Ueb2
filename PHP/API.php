@@ -1,6 +1,6 @@
 <?php
-include 'connection.php';
 
+include 'register.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['submit'])) {
         $id = uniqid();
