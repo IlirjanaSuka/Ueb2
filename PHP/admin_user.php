@@ -1,23 +1,23 @@
-<!--<?php
+<?php
 session_start();
 $admin_id = $_SESSION['admin_id'];
-if(!isset($admin_id)){
-    header('loaction:login.php');
+if (!isset($admin_id)) {
+    header('Location: login.php');
+    exit();
 }
-if (isset($_POST['logout'])){
+if (isset($_POST['logout'])) {
     session_destroy();
-    header('loaction:login.php');
+    header('Location: login.php');
+    exit();
 }
-/*deletin orders */
-if(isset($_GET['delete'])){
+/* Deleting orders */
+if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
-   
-    mysqli_query($conn, "DELETE FROM 'users' WHERE id=$delete_id") or die('query failed');
-
-    header('loaction:admin_user.php');
+    mysqli_query($conn, "DELETE FROM `users` WHERE id=$delete_id") or die('Query failed');
+    header('Location: admin_user.php');
+    exit();
 }
-
-?>-->
+?>
 
 <!DOCTYPE html>
 <html>
@@ -30,37 +30,36 @@ if(isset($_GET['delete'])){
     <body>
         <?php include 'admin_header.php'?>
         <?php
-         if(isset($message)){
-             foreach ($message as $message){
-                 echo '
-                 <div class="message">
-                 <span>'.$message.'</span>
-                 <i class="bi bi-x-circle onclick="this.parentElement.remove()"></i>
-                 </div>';
-             }
-         }
-         ?>
+        if (isset($message)) {
+            foreach ($message as $msg) {
+                echo '
+                <div class="message">
+                <span>'.$msg.'</span>
+                <i class="bi bi-x-circle onclick="this.parentElement.remove()"></i>
+                </div>';
+            }
+        }
+        ?>
         <section class="order-container">
             <h1 class="title">total registered users</h1>
             <div class="box-container">
-            <?php
-                $select_users = mysqli_query($conn, "SELECT * FROM 'users") or die('query failed');
-                if(mysqli_num_rows($select_users)>0){
-                    while($fetch_users = mysqli_fetch_assoc($select_users)){
-
-                ?>
-                <div class="box">
-                <p>user id: <span><?php echo $fetch_users['id'] ;?></span></p>
-                <p>user name: <span><?php echo $fetch_users['name'] ;?></span></p>
-                <p>email: <span><?php echo $fetch_users['email'] ;?></span></p>
-                <p>user type: <span style="color:<?php if($fetch_users['user_type']=='admin'){echo 'organe';};?>">
-                <?php echo $fetch_users['user_type'] ;?></span></p>
-                <a href="admin_user.php?delete=<?php echo $fetch_users['id']?>"class="delete"
-                        onclick="return confirm('delete this')">Delete</a>
-                </div>
                 <?php
-                        }
+                $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('Query failed');
+                if (mysqli_num_rows($select_users) > 0) {
+                    while ($fetch_users = mysqli_fetch_assoc($select_users)) {
+                        ?>
+                        <div class="box">
+                            <p>user id: <span><?php echo $fetch_users['id'] ;?></span></p>
+                            <p>user name: <span><?php echo $fetch_users['name'] ;?></span></p>
+                            <p>email: <span><?php echo $fetch_users['email'] ;?></span></p>
+                            <p>user type: <span style="color:<?php if($fetch_users['user_type']=='admin'){echo 'organe';};?>">
+                            <?php echo $fetch_users['user_type'] ;?></span></p>
+                            <a href="admin_user.php?delete=<?php echo $fetch_users['id'];?>" class="delete"
+                                onclick="return confirm('Delete this?')">Delete</a>
+                        </div>
+                        <?php
                     }
+                }
                 ?>
             </div>
         </section>
