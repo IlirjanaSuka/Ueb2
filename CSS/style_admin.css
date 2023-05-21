@@ -188,27 +188,27 @@ header{
     margin: 2rem 0;
     color: #2a591f;
 }
-.box-container{
+.dashboard{
     padding: 2% 8%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     justify-content: center;
     align-items: center;
 }
-.box-container .box-container{
+.dashboard .box-container{
     box-shadow: var(--box-shadow);
     padding: 1rem 0;
-    background: var(--green);
+    background: #e0ffcd;
     border: 2px solid var(--green);
     margin: 1rem;
     text-align: center;
     border-radius: 5px;
 }
-.box-container .box h3{
+.dashboard .box h3{
     font-size: 3rem;
     color: #2a591f;
 }
-.box-container .box p{
+.dashboard .box p{
     font-size: 18px;
     text-transform: capitalize;
     margin: 1rem 0;
