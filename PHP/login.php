@@ -13,9 +13,10 @@ if(isset($_POST['submit'])){
     $email = filter_var($email, FILTER_SANITIZE_STRING);
     $pass = $_POST['pass'];
     $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+    $role = $_POST['role']; // Get the selected role
 
-    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email=? AND password=?");
-    $select_user->execute([$email, $pass]);
+    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email=? AND password=? AND role=?");
+    $select_user->execute([$email, $pass, $role]);
     $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
     if($select_user->rowCount() > 0){
@@ -23,7 +24,7 @@ if(isset($_POST['submit'])){
         $_SESSION['user_name'] = $row['name'];
         $_SESSION['user_email'] = $row['email'];
 
-        if($row['is_admin'] == 1){
+        if($role == 'admin'){
             header('location: admin.php'); // Redirect to admin page
             exit();
         } else {
@@ -52,7 +53,7 @@ if(isset($_POST['submit'])){
                 <img src="im.png" >
                 <h1>login now</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing. ...</p>
-            </div>
+            </div>[]
             <form action="" method="post">
                 <div class="input-filed">
                     <p>your email<sup>*</sup></p>
@@ -65,6 +66,13 @@ if(isset($_POST['submit'])){
                     oninput="this.value=this.value.replace(/\s/g, '')">
                     <a class="pass" href="forgotpassword.php"><p>Forgot Password?</p></a>
                 </div>
+                <div class="input-field">
+    <p>Select role:</p>
+    <select name="role" required class="role-select">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select>
+</div>
                 <input type="submit" name="submit" value="Login" class="btn">
                 <p>Do not have an account? <a href="register.php">Register now</a></p>
             </form>
