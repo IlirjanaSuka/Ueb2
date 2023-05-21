@@ -3,28 +3,35 @@ include 'connection.php';
 session_start();
 
 if(isset($_SESSION['user_id'])){
-    $user_id=$_SESSION['user_id'];
+    $user_id = $_SESSION['user_id'];
 }else{
-    $user_id='';
+    $user_id = '';
 }
 
 if(isset($_POST['submit'])){
-    $email=$_POST['email'];
-    $email=filter_var($email, FILTER_SANITIZE_STRING);
-    $pass=$_POST['pass'];
-    $pass=filter_var($pass, FILTER_SANITIZE_STRING);
+    $email = $_POST['email'];
+    $email = filter_var($email, FILTER_SANITIZE_STRING);
+    $pass = $_POST['pass'];
+    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
-    $select_user=$conn->prepare("SELECT * FROM `users` WHERE email=? AND password=?");
-    $select_user->execute([$email,$pass]);
-    $row=$select_user->fetch(PDO::FETCH_ASSOC);
+    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email=? AND password=?");
+    $select_user->execute([$email, $pass]);
+    $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
-    if($select_user->rowCount()>0){
-        $_SESSION['user_id']=$row['id'];
-        $_SESSION['user_name']=$row['name'];
-        $_SESSION['user_email']=$row['email'];
-        header('location: home.php');
-    }else{
-        $message[] = 'incorrect username or password';
+    if($select_user->rowCount() > 0){
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_name'] = $row['name'];
+        $_SESSION['user_email'] = $row['email'];
+
+        if($row['is_admin'] == 1){
+            header('location: admin.php'); // Redirect to admin page
+            exit();
+        } else {
+            header('location: home.php'); // Redirect to regular user page
+            exit();
+        }
+    } else {
+        $message[] = 'Incorrect username or password';
     }
 }
 ?>
@@ -49,17 +56,17 @@ if(isset($_POST['submit'])){
             <form action="" method="post">
                 <div class="input-filed">
                     <p>your email<sup>*</sup></p>
-                    <input type="email" name="email", required placeholder="enter your naemailme" maxlength="50"
+                    <input type="email" name="email" required placeholder="enter your email" maxlength="50"
                      oninput="this.value=this.value.replace(/\s/g, '')" >
                 </div>
                 <div class="input-filed">
                     <p>your password<sup>*</sup></p>
-                    <input type="password" name="pass", required placeholder="enter your password" maxlength="50"
+                    <input type="password" name="pass" required placeholder="enter your password" maxlength="50"
                     oninput="this.value=this.value.replace(/\s/g, '')">
                     <a class="pass" href="forgotpassword.php"><p>Forgot Password?</p></a>
                 </div>
-                <input type="submit" name="submit" value="register now" class="btn">
-                <p>do not  have an account? <a href="register.php">register now</a></p>
+                <input type="submit" name="submit" value="Login" class="btn">
+                <p>Do not have an account? <a href="register.php">Register now</a></p>
             </form>
            </section>
         </div>
