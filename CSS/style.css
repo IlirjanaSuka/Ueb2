@@ -502,7 +502,7 @@ ul{
 }
 .btn:hover::before{
     width: 100%;
-    background-color:#87a243;
+    background-color:green;
 }
 label{
     text-transform: capitalize;
@@ -1347,7 +1347,7 @@ footer .bottom-footer{
 .cart-total .button .btn{
     margin: 1rem;
 }
-/*Cookie*/
+
 .popup {
     position: fixed;
     top: 0;
@@ -1411,4 +1411,55 @@ footer .bottom-footer{
 .btn3:hover::before{
     width: 100%;
     background-color:#87a243bf;
+}
+
+
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container input[type="email"],
+.form-container input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/*admin-user*/
+.role-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #45a049;
+    color: #fff;
+}
+
+.role-select option {
+    font-size: 16px;
 }
